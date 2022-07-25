@@ -25,6 +25,14 @@ List of Trays:
 - [YKUSH3 USB kvm](3D_shelves/ykush3_tray.png)
 
 
+# Special print and build notes
+
+## Raspberry PI4 + TTL-USB + Terminal block
+
+* The print requires block support enforcer in the area where TTL-USB interface is, as shown in [Tray in PrusaSlicer](trpi4-prusaslicer.png). Included [gcode for Prusa Mini](trpi4-1-rpi4-tray-all_0.2mm_PETG_MINI_7h23m.gcode) 
+* Supports for TTL-USB interface pcb need to be manually removed
+* The tray is suitted for RPi4, [PoE+ HAT](https://www.amazon.de/gp/product/B0928ZD7QQ)], [slim SSD SATA disk](https://www.komputronik.pl/product/376298/kingston-ssd-a400-120gb.html), [SATA-USB interface](https://www.amazon.de/-/en/gp/product/B06XCV1W97), [ttl-usb interface](https://www.aliexpress.com/item/32786625237.html) and [wall mounted 6P terminal block connector](https://www.aliexpress.com/item/10000003892271.html)
+
 ## Contributing
 
 See the `CONTRIBUTING.md` file.
