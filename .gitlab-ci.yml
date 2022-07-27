@@ -33,3 +33,4 @@ check-stl:
   script:
     - ls 3D_shelves/*.FCStd | while read f ; do ls  ${f%%.FCStd}*.stl; done
     - ls 3D_shelves/*.FCStd | while read f ; do ls  ${f%%.FCStd}*.png; done
+    - sleep 60
