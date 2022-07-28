@@ -33,6 +33,7 @@ List of Trays:
 * Supports for TTL-USB interface pcb need to be [manually removed after print](remove_supports.png).
 * The tray is suitted for RPi4, [PoE+ HAT](https://www.amazon.de/gp/product/B0928ZD7QQ), [slim SSD SATA disk](https://www.komputronik.pl/product/376298/kingston-ssd-a400-120gb.html), [SATA-USB interface](https://www.amazon.de/-/en/gp/product/B06XCV1W97), [ttl-usb interface](https://www.aliexpress.com/item/32786625237.html) and [wall mounted 6P terminal block connector](https://www.aliexpress.com/item/10000003892271.html)
 * due to limitation of 1U rack space [replacing plastic covers with heat shrinked tubing and bending](bend_connectors.png) of terminal cables is needed and also [bending and removing plastic spacer of pins for TTL-USB interface is needed](bend_pins.png) to [fit in tray](rpi_assembly.png)
+* No Vcc should be connected to ttl-USB interface. Otherwise power supply to RPI4 will be delivered via ttl-USB console and PoE+ power control won't work.
 
 ## Contributing
 
