@@ -32,7 +32,8 @@ List of Trays:
 * The print requires block support enforcer in the area where TTL-USB interface is, as shown in [Tray in PrusaSlicer](trpi4-prusaslicer.png). Included [gcode for Prusa Mini](trpi4-1-rpi4-tray-all_0.2mm_PETG_MINI_7h23m.gcode) 
 * Supports for TTL-USB interface pcb need to be manually removed
 * The tray is suitted for RPi4, [PoE+ HAT](https://www.amazon.de/gp/product/B0928ZD7QQ), [slim SSD SATA disk](https://www.komputronik.pl/product/376298/kingston-ssd-a400-120gb.html), [SATA-USB interface](https://www.amazon.de/-/en/gp/product/B06XCV1W97), [ttl-usb interface](https://www.aliexpress.com/item/32786625237.html) and [wall mounted 6P terminal block connector](https://www.aliexpress.com/item/10000003892271.html)
-* due to lack of space inside tray special modification of terminal cables is needed as shown on [foto1](cm1.png), [foto2](cm2.png) and [foto3](cm3.png)
+* rpi tray 3D print should be done with support enforncers where ttl-usb interface is that [need to be removed after print](remove_supports.png).
+* due to limitation of 1U rack space [special modification](bend_connectors.png) of terminal cables and [TTL-USB interface pins is needed](bend_pins.png) to [fit in tray](rpi_assembly.png)
 
 ## Contributing
 
