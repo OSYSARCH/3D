@@ -5,12 +5,10 @@ SPDX-License-Identifier: CC-BY-4.0
 -->
 
 # Hardware Lab as a Service Blueprint
-The aim of the project is to help Contributors get up to speed with setup similar to what OSTC Developers are using in their LAB.
-The set of hardware is based on what has been tested and interfaced with WRC services. Any hardware with similar functionality can be used but we've found that it takes time and seasoning and refinement to make setups stable.
+The aim of the project is to help Contributors get up to speed with setup similar to original OSTC (Warsaw Resarch Laboratory) configuration.
+The set of hardware is based on what has been tested and interfaced with WRC services. Any hardware with similar functionality can be used but we've found that it takes time and seasoning and refinement to make setups stable and work well with lava scripts.
 
 # Hardware inventory
-
-We're adding new DUTs and new set of accessories, according to Oniroproject blueprints inventory.
 
 Devices come in different sizes; different set of connectors; power supplies requirements, network interfaces, etc.
 Unification of environment where they can be put becomes evident with the number of growing amount of DUTs, cabling mesh and collection of power supplies and accessiories.
@@ -19,12 +17,15 @@ of wires very quickly and it's very easy for electrical shortcut to occur and ma
 
 We want to make the setups reliable, compact and clean. Although at some point it becomes a matter of aestetics and cool gadgets, the most important is to have it reliable and manageable.
 
-## List of hardware needed to build Oniroproject based laboratory
-- DUT - Device Under Test
+## Some terminology
+- DUT - Device(s) Under Test
 - PoE - Power Over Ethernet, 802.3af (PoE, 15.4W max), 802.3at (PoE+, 30W max), 802.3bt (PoE++, 60W max), 802.3bt (PoE++, 100W max)
 - PDU - Power Distribution Unit - controlled AC line
 
 ## Base hardware
+The exact set of devices depends on what type of DUTs is going to be tested.
+
+We advice to use at least PoE+ (802.3at) ethernet switches over PSUs + PDUs. Usage of PoE (802.3af) switches hasn't been tested.
 
 ### Power supplies
 prerequisities:
@@ -41,13 +42,21 @@ The list of PSUs being used in Oniroproject
 - [PoE splitter for 12V](https://www.aliexpress.com/item/33018258800.html)
 - [PoE splitter fpr 12V](https://www.aliexpress.com/item/4001038785964.html)
 - [PoE splitter for 12V/19V/24V](https://planetechusa.com/product/poe-172s-single-port-10-100-1000mbps-ultra-poe-splitter-12v-19v-24v/)
-- PoE switch/router (Huawei S5700, Cisco POE switches/routers, etc.)
+- PoE+ switch
+
+### Supported PoE+ switches
+The following switches has been tested and work for lava-workers:
+
+- Huawei S5720 [script](https://git.ostc-eu.org/OSTC/infrastructure/lava/lava-config/-/blob/master/lava.ostc-eu.org/dispatcher-configs/common.warsaw/lava-dispatcher-host/build/tools/s5720_switch_control.sh)
+- TP-Link T1500G-10MPS [script](https://git.ostc-eu.org/OSTC/infrastructure/lava/lava-config/-/blob/master/lava.ostc-eu.org/dispatcher-configs/common.warsaw/lava-dispatcher-host/build/tools/t1500g-10mps-v1_switch_control.sh)
+- Cisco cbs350/Cisco SG300-10PP [script](https://git.ostc-eu.org/OSTC/infrastructure/lava/lava-config/-/blob/master/lava.ostc-eu.org/dispatcher-configs/common.warsaw/lava-dispatcher-host/build/tools/cbs350_switch_control.sh)
+
 
 ### Power Distribution units
-In our configuration we use mixed PDU/PoE/USB power control of devices, but we are aiming at having uniform solution.
-The list of PDUs being used in Oniroproject
+In our configuration we use mixed PDU/PoE/USB power controlled devices, but we are aiming at having uniform solution, based mainly on PoE+.
+
+Also, power to some of the hardware is controlled by:
 - [Intelinet PDU](https://www.komputronik.pl/product/592881/intellinet-listwa-zasilajaca-pdu-1u-zarzadzalna-po-ip-z-wyswietlaczem-do-szaf-rack-19-.html)
-- [Rack PDU, Switched, 1U, 16A, 208/230V](https://www.apc.com/shop/us/en/products/Rack-PDU-Switched-1U-16A-208-230V-8-C13/P-AP7921B)
 
 #### DUTs setups
 * [Raspberry Pi4](RaspberryPi4)

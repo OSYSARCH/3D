@@ -19,10 +19,8 @@ You must provide _dhcpd.conf_, which will reside on volume binded to container. 
 Logs
 ----
 
-Nothing spectacular...
-
 ```
-docker logs dhcp
+docker logs -f dhcp
 ```
 
 Known issues
