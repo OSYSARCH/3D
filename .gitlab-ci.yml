@@ -21,11 +21,16 @@ stages:
 include:
   - local: '/.oniro-ci/dco.yaml'
   - template: 'Workflows/MergeRequest-Pipelines.gitlab-ci.yml'
+  - project: 'eclipsefdn/it/releng/gitlab-ci-templates'
+    file: '/jobs/eca.gitlab-ci.yml'
 
 dco:
   extends: .dco
   tags: [wrc,compliance]
 
+eca:
+  extends: .eca
+  
 # check if corresponding stl and png files exist
 check-stl:
   stage: test
